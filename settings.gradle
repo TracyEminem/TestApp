@@ -1,0 +1,38 @@
+pluginManagement {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://jitpack.io' }
+        maven{ url 'https://maven.aliyun.com/repository/central' }
+        maven{ url 'https://maven.aliyun.com/repository/public' }
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        gradlePluginPortal()
+        mavenCentral()
+
+    }
+    plugins {
+        id 'com.android.application' version '7.1.0-beta04'
+        id 'com.android.library' version '7.1.0-beta04'
+        id 'org.jetbrains.kotlin.android' version '1.5.20'
+        id 'org.jetbrains.kotlin.jvm' version '1.5.30'
+        id "org.jetbrains.kotlin.plugin.parcelize" version "1.6.0-M1"
+        id "org.jetbrains.kotlin.kapt" version "1.6.0"
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://jitpack.io' }
+        maven{ url 'https://maven.aliyun.com/repository/central' }
+        maven{ url 'https://maven.aliyun.com/repository/public' }
+        maven{ url 'https://maven.aliyun.com/repository/gradle-plugin'}
+        mavenCentral()
+    }
+}
+rootProject.name = "TestApp"
+include ':app'
+include ':testLib'
