@@ -1,12 +1,16 @@
 package com.example.testlib
 
-import com.example.testlib.sort.InertSort
+import com.example.testlib.algorithm.VaildParentheses
+import com.example.testlib.base.ArrayStack
 import com.example.testlib.sort.InsertionSort
 import com.example.testlib.sort.SelectionSort
 import com.example.testlib.sort.Students
 import com.example.testlib.util.SortingHelper
 import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.flowOf
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.take
 import java.text.SimpleDateFormat
 import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.EmptyCoroutineContext
@@ -97,6 +101,27 @@ class TestMain {
                 print("${it},")
             }
             println()
+
+
+            val arr: com.example.testlib.java.Array<Students> = com.example.testlib.java.Array()
+            for (index in  1..20){
+                arr.addLast(Students("Alice", 100))
+                arr.addLast(Students("Bob", 66))
+                arr.addLast(Students("Charlie", 88))
+            }
+            println(arr)
+
+
+            var stack = ArrayStack<Int>()
+            for (i in 0 until 5){
+                stack.push(i)
+                println(stack)
+            }
+            stack.pop()
+            println(stack)
+
+
+            VaildParentheses.isValid("(]")
         }
     }
 
@@ -153,7 +178,7 @@ class TestMain {
     }
 
     suspend fun test(){
-        flowOf(1,3,4,5,6,)
+        flowOf(1, 3, 4, 5, 6)
             .take(3)
             .map {
                 it * 2
